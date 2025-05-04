@@ -1,0 +1,104 @@
+{
+    "assistant": {
+        "name": "Aira",
+        "version": "1.0.0",
+        "language": "es-ES",
+        "wake_word": "eva",
+        "voice_detection_sensitivity": 0.5,
+        "timezone": "Europe/Madrid",
+        "startup_sound": true,
+        "shutdown_sound": true
+    },
+    "voice": {
+        "input": {
+            "enabled": true,
+            "engine": "system",
+            "device_index": null,
+            "energy_threshold": 300,
+            "pause_threshold": 0.8,
+            "phrase_threshold": 0.10,
+            "dynamic_energy_threshold": true,
+            "timeout": 5,
+            "offline_mode": false
+        },
+        "output": {
+            "enabled": true,
+            "engine": "system",
+            "voice_id": null,
+            "rate": 175,
+            "volume": 1.0,
+            "pitch": 1.0,
+            "offline_mode": false
+        }
+    },
+    "ai": {
+        "provider": "openai",
+        "model": "gpt-4o-mini",
+        "max_tokens": 2048,
+        "temperature": 0.7,
+        "top_p": 1.0,
+        "frequency_penalty": 0.0,
+        "presence_penalty": 0.0,
+        "system_prompt": "Eres un asistente personal virtual inteligente, útil, educado y conciso. Responde de manera clara y eficiente a las preguntas y solicitudes del usuario.",
+        "context_window_size": 10,
+        "stream_response": false,
+        "fallback_to_offline": true
+    },
+    "skills": {
+        "weather": {
+            "enabled": true,
+            "default_location": "Madrid, España",
+            "units": "metric"
+        },
+        "calendar": {
+            "enabled": true,
+            "sync_interval": 30,
+            "default_calendar": "primary"
+        },
+        "email": {
+            "enabled": false,
+            "check_interval": 5,
+            "notify_new_emails": true
+        },
+        "news": {
+            "enabled": true,
+            "sources": ["bbc-news", "el-mundo", "cnn"],
+            "max_articles": 5,
+            "update_interval": 60
+        },
+        "reminders": {
+            "enabled": true,
+            "notification_sound": true,
+            "advance_notice": 5
+        },
+        "music": {
+            "enabled": true,
+            "provider": "local",
+            "default_volume": 0.5
+        },
+        "home_automation": {
+            "enabled": false,
+            "platform": "home_assistant",
+            "host": "http://homeassistant.local:8123"
+        }
+    },
+    "privacy": {
+        "store_conversations": true,
+        "conversation_retention_days": 30,
+        "voice_recording_retention": "none",
+        "anonymize_personal_data": true,
+        "allow_third_party_services": false
+    },
+    "system": {
+        "log_level": "INFO",
+        "log_file": "logs/assistant.log",
+        "log_rotation": true,
+        "max_log_size": 10,
+        "backup_count": 5,
+        "auto_update": false,
+        "allow_telemetry": false,
+        "cpu_limit": 80,
+        "memory_limit": 75,
+        "offline_capabilities": true
+    }
+}
